@@ -1,8 +1,8 @@
 FROM python:3.8-slim
 
 RUN apt-get update && \
-    apt-get install -y curl git && \
-    python3 -m pip install --upgrade pip
+    apt-get install -y curl git --no-install-recommends && \
+    python3 -m pip install --no-cache-dir --upgrade pip
 
 # Configure environments vars. Overriden by GitHub Actions
 ENV INPUT_SNOWFLAKE_WAREHOUSE=
@@ -19,7 +19,7 @@ WORKDIR ${APP_DIR}
 
 # setup python environ
 COPY ./requirements.txt ${APP_DIR}
-RUN pip install -r ${APP_DIR}/requirements.txt
+RUN pip install --no-cache-dir -r ${APP_DIR}/requirements.txt
 
 # copy app files
 COPY . .
