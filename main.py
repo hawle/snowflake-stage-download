@@ -1,8 +1,7 @@
 import os
-from datetime import datetime
-from dotenv import load_dotenv
-import snowflake.connector
 import json
+import snowflake.connector
+from dotenv import load_dotenv
 
 
 def set_action_outputs(output_name, value):
