@@ -1,4 +1,4 @@
-name: 'Snowflake Stage File Donwloader Action'
+name: 'Snowflake Stage File Downloader Action'
 description: 'This action lets you download files recursively from a Snowflake stage.'
 author: 'Gergely Havlicsek'
 
