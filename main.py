@@ -72,7 +72,7 @@ def main():
         cur.close()
         conn.close()
 
-        print(f"All files downloaded!")
+        print("All files downloaded!")
         set_action_outputs("files", json.dumps(json_results))
 
 
