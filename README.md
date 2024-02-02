@@ -18,7 +18,7 @@ The action uses the [GET SQL command](https://docs.snowflake.com/en/sql-referenc
 - `snowflake_account` - Account name for Snowflake DB.
 - `snowflake_warehouse` - Set the warehouse context.
 - `snowflake_username`, `snowflake_password` - Credentials for your DB.
-  - It's recommended to use [Github's Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) for those arguments.
+  - It's recommended to use [GitHub's Secrets](https://docs.github.com/en/actions/reference/encrypted-secrets) for those arguments.
 - `snowflake_database` - Sets the Snowflake database.
 - `snowflake_stage` - Sets the Snowflake stage name and/or path. **Please do not add the `@` character.** 
 - `local_download_path` - Specifies the download folder for the files.
@@ -27,7 +27,7 @@ The action uses the [GET SQL command](https://docs.snowflake.com/en/sql-referenc
 
 `files` - Json string contains the results from all downloaded files.
 
-It may be accessed in following steps. See [this](https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#tojson) guide for more github's action expressions examples.
+It may be accessed in following steps. See [this](https://docs.github.com/en/actions/reference/context-and-expression-syntax-for-github-actions#tojson) guide for more GitHub's action expressions examples.
 
 ## Usage
 
