@@ -28,5 +28,8 @@ jobs:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
-          VALIDATE_MARKDOWN: false
+          VALIDATE_PYTHON: true
+          VALIDATE_DOCKER: true
+          VALIDATE_GITHUB_ACTIONS: true
+          VALIDATE_DOCKERFILE_HADOLINT: true
 
