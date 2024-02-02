@@ -1,21 +1,43 @@
-name: 'The name of your action here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Snowflake Stage File Downloader Action'
+description: 'This action lets you download files recursively from a Snowflake stage.'
+author: 'Gergely Havlicsek'
+
+branding:
+  icon: 'database'
+  color: 'blue'
 
 # Define your inputs here.
 inputs:
-  who-to-greet:
-    description: 'Your input description here'
+  snowflake_username:
+    description: 'Username for Snowflake'
     required: true
-    default: 'World'
+  snowflake_password:
+    description: 'Password for Snowflake'
+    required: true
+  snowflake_account:
+    description: 'Account name for Snowflake'
+    required: true
+  snowflake_warehouse:
+    description: 'Warehouse as context'
+    required: true
+  snowflake_database:
+    description: 'Snowflake database'
+    required: true
+  snowflake_schema:
+    description: 'Snowflake schema'
+    required: true
+  snowflake_stage:
+    description: 'Snowflake target stage or stage path'
+    required: true
+  local_download_path:
+    description: 'Local path to download the files'
+    required: true
 
 # Define your outputs here.
 outputs:
-  greeting:
-    description: 'Your output description here'
+  files:
+    description: 'JSON array of downloaded files'
 
 runs:
   using: docker
   image: Dockerfile
-  env:
-    INPUT_WHO_TO_GREET: ${{ inputs.who-to-greet }}
