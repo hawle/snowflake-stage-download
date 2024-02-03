@@ -19,6 +19,25 @@ def set_action_outputs(output_name, value):
         print("{0}={1}".format(output_name, value))
 
 
+def check_directory_permissions(directory_path):
+    if os.access(directory_path, os.R_OK):
+        print(f"Read permissions are granted for the directory: {directory_path}")
+    else:
+        print(f"Read permissions are not granted for the directory: {directory_path}")
+
+    if os.access(directory_path, os.W_OK):
+        print(f"Write permissions are granted for the directory: {directory_path}")
+    else:
+        print(f"Write permissions are not granted for the directory: {directory_path}")
+
+    if os.access(directory_path, os.X_OK):
+        print(f"Execute permissions are granted for the directory: {directory_path}")
+    else:
+        print(
+            f"Execute permissions are not granted for the directory: {directory_path}"
+        )
+
+
 def main():
     load_dotenv()  # only on local run
     # print(os.environ)
@@ -33,7 +52,18 @@ def main():
     local_download_path = os.environ["INPUT_LOCAL_DOWNLOAD_PATH"]
 
     # Ensure the download directory exists
+    print(f"Current working dir: {os.getcwd()}")
+    check_directory_permissions(os.getcwd())
+
+    # Check absolute path
+    absolute_path = os.path.abspath(local_download_path)
+    print(f"Absolute path: {absolute_path}")
+
+    if os.path.isdir(absolute_path):
+        print("Local download path exists")
+
     os.makedirs(local_download_path, exist_ok=True)
+    check_directory_permissions(os.path.abspath(local_download_path))
 
     conn = snowflake.connector.connect(
         user=snowflake_username,
