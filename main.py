@@ -33,7 +33,7 @@ def main():
     local_download_path = os.environ["INPUT_LOCAL_DOWNLOAD_PATH"]
 
     # Ensure the download directory exists
-    os.makedirs(local_download_path, exist_ok=False)
+    os.makedirs(local_download_path, exist_ok=True)
 
     conn = snowflake.connector.connect(
         user=snowflake_username,
