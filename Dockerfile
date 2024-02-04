@@ -23,7 +23,7 @@ RUN pip install --no-cache-dir -r ${APP_DIR}/requirements.txt
 
 # copy app files
 COPY . .
-RUN useradd -ms /bin/bash toor && chown -R toor:toor /app
-USER toor
+# RUN useradd -ms /bin/bash toor && chown -R toor:toor /app
+# USER toor
 # command to run in container start
 CMD python ${APP_DIR}/main.py
